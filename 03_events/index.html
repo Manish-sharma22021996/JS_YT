@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events topic</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: aqua;
+        }
+        .box3{
+            background-color: yellow;
+        }
+        .box4{
+            background-color: orange;
+        }
+       
+    </style>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <h2>Square Box</h2>
+    <ul id="boxes">
+        <li class="box box1">Red</li>
+        <li class="box box2">Aqua</li>
+        <li class="box box3">Yellow</li>
+        <li class="box box4">Orange</li>
+        <a href="https://www.freecodecamp.org/news/string-to-number-in-javascript-convert-a-string-to-an-int-in-js/">String in Javascript</a>
+    </ul>
+</body>
+<!-- <script>
+    let bd = document.body;
+bd.addEventListener('click', function() {
+    console.log("clicked on Body");
+}, false);
+
+let box = document.querySelector('.box1');
+box.addEventListener('click', function(e) {
+    e.stopPropagation();
+    console.log("click on Red");
+    // console.log(box.parentNode);
+}, false);
+</script> -->
+</html>
