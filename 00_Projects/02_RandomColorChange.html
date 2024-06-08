@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            box-sizing: border-box;
+            /* width: 300px; */
+            /* height: 200px; */
+            background-color: lightblue;
+            text-align: center; /* Optional: for aligning text inside the block */
+        }
+
+        button{
+            background-color: rgb(85, 73, 73);
+            color: white;
+            padding: 10px 14px;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="container">
+    <h2>Random color changer after each second</h2>
+    <button class="start">Start</button>
+    <button class="end">End</button>
+    <div id="colorCode">
+
+    </div>
+   </div>
+
+    
+</body>
+<script>
+
+    const randomColor = function(){
+        const red = Math.round(Math.random() * 256);
+        const green = Math.round(Math.random() * 256);
+        const blue = Math.round(Math.random() * 256);
+
+        return `rgb(${red}, ${green}, ${blue})`
+       
+    }
+    document.querySelector('body').style.backgroundColor = randomColor();
+    let intervalId;
+    document.querySelector('.start').addEventListener('click', function(){
+      if(!intervalId){
+        intervalId =  setInterval(function(){
+        document.querySelector('body').style.backgroundColor = randomColor();
+       }, 1000)
+      }
+    
+    }, false)
+
+    document.querySelector('.end').addEventListener('click', function(){
+            clearInterval(intervalId)
+            document.querySelector('#colorCode').innerHTML= `<h2> Current color code id : ${randomColor()} </h2>`;
+            intervalId = null;
+
+    }, false)
+</script>
+</html>
